@@ -1,0 +1,2 @@
+-ganti nama server, database user dan password di appsettings.json
+-jalankan script.sql untuk menambahkan database
