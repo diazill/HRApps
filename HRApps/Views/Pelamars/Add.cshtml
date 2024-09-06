@@ -1,0 +1,70 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Add Pelamar";
+}
+
+@model HRApps.Models.ViewModel.AddPelamarViewModel
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="row align-items-center" style="width: 70%;">
+        <div class="col-md-4 d-flex flex-column align-items-center">
+            <img id="photoPreview" src="~/img/undraw_profile.svg" class="img-fluid img-thumbnail mb-3" alt="Foto Pelamar" style="width: 4cm; height: 6cm;">
+            <input type="file" class="form-control" id="photoUpload" name="photo" accept="image/*" onchange="previewImage(event)">
+        </div>
+
+        <!-- Form Section -->
+        <div class="col-md-8">
+            <div class="card p-4">
+                <form method="post">
+                    <div class="row">
+                        <div class="col">
+                            <label for="firstname" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First name" aria-label="First name" asp-for="FirstName">
+                        </div>
+                        <div class="col">
+                            <label for="lastname" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last name" aria-label="Last name" asp-for="LastName">
+                        </div>
+                    </div>
+                    <div class="mb-1">
+                        <label for="nik" class="form-label">NIK</label>
+                        <input type="number" class="form-control" id="nik" name="nik" placeholder="NIK" asp-for="Nik">
+                    </div>
+                    <div class="mb-1">
+                        <label for="jeniskelamin" class="form-label">Jenis Kelamin</label>
+                        <select class="form-select" aria-label="Default select example" id="jeniskelamin" name="jeniskelamin" asp-for="JenisKelamin">
+                            <option selected>Pilih Jenis Kelamin</option>
+                            <option value="1">Laki - Laki</option>
+                            <option value="2">Perempuan</option>
+                        </select>
+                    </div>
+                    <div class="mb-1">
+                        <label for="status" class="form-label">Status Penikahan</label>
+                        <select class="form-select" aria-label="Default select example" id="status" name="status" asp-for="Status">
+                            <option selected>Pilih Status</option>
+                            <option value="1">Kawin</option>
+                            <option value="2">Belum Kawin</option>
+                            <option value="3">Cerai Hidup</option>
+                            <option value="4">Cerai Mati</option>
+                        </select>
+                    </div>
+                    <div class="mb-1">
+                        <label for="tgllahir" class="form-label">Tanggal Lahir</label>
+                        <input type="date" class="form-control" id="tgllahir" name="tgllahir" placeholder="Tanggal Lahir" asp-for="TglLahir">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Upload CV</label>
+                        <input class="form-control" type="file" id="formFile">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Daftar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
